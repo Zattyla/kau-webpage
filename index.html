@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAU - Guidelines & Restricted List</title>
+    <style>
+        /* KAU Official Color Palette */
+        :root {
+            --kau-pink: #fbaed2; 
+            --kau-blue: #a7c1e6; 
+            --kau-bg: #fff5fa; 
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--kau-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Lógica de Idiomas (Ocultar o que não está selecionado) */
+        body.lang-en .texto-pt, body.lang-en .texto-es, body.lang-en .texto-fr { display: none; }
+        body.lang-pt .texto-en, body.lang-pt .texto-es, body.lang-pt .texto-fr { display: none; }
+        body.lang-es .texto-en, body.lang-es .texto-pt, body.lang-es .texto-fr { display: none; }
+        body.lang-fr .texto-en, body.lang-fr .texto-pt, body.lang-fr .texto-es { display: none; }
+
+        /* Botões de Idioma */
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--white);
+            color: var(--kau-blue);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--kau-pink), var(--kau-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem 3rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(251, 174, 210, 0.2);
+            border-top: 5px solid var(--kau-blue);
+        }
+
+        h2 {
+            color: var(--kau-pink);
+            margin-bottom: 1rem;
+            border-bottom: 2px dashed var(--kau-blue);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        a {
+            color: var(--kau-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: var(--kau-pink);
+            text-decoration: underline;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        #searchBar {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 20px;
+            border: 2px solid var(--kau-pink);
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        #searchBar:focus {
+            border-color: var(--kau-blue);
+            box-shadow: 0 0 8px rgba(167, 193, 230, 0.5);
+        }
+
+        /* List Grid */
+        .grid-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 2px solid var(--kau-blue);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(167, 193, 230, 0.4);
+        }
+
+        .card h3 {
+            color: var(--kau-pink);
+            margin-bottom: 0.2rem;
+            font-size: 1.3rem;
+        }
+
+        .card h4 {
+            color: var(--kau-blue);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        /* Rules List */
+        ul.regras-lista {
+            list-style-type: none;
+        }
+
+        ul.regras-lista li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.regras-lista li::before {
+            content: "!";
+            color: var(--kau-pink);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer & Button */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            background-color: var(--white);
+            border-top: 3px solid var(--kau-pink);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .discord-btn {
+            background-color: var(--kau-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .discord-btn:hover {
+            background-color: var(--kau-pink);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="lang-en"> 
+
+    <header>
+        <div class="language-switcher">
+            <button class="lang-btn active" id="btn-en" onclick="setLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" id="btn-pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
+            <button class="lang-btn" id="btn-es" onclick="setLanguage('es')">🇪🇸 ES</button>
+            <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+        </div>
+
+        <div class="logo-container">
+            <img src="logo.png" alt="K-pop AI Universe (KAU) Logo">
+        </div>
+        <h1 class="texto-en">KAU Safety Guidelines</h1>
+        <h1 class="texto-pt">Diretrizes de Segurança do KAU</h1>
+        <h1 class="texto-es">Directrices de Seguridad de KAU</h1>
+        <h1 class="texto-fr">Directives de Sécurité de KAU</h1>
+    </header>
+
+    <main>
+        <section id="introducao">
+            <h2 class="texto-en">Our Safe Space!</h2>
+            <h2 class="texto-pt">Nosso Espaço Seguro!</h2>
+            <h2 class="texto-es">¡Nuestro Espacio Seguro!</h2>
+            <h2 class="texto-fr">Notre Espace Sûr !</h2>
+            
+            <p class="texto-en">The <strong>K-pop AI Universe (KAU)</strong> is a space created to celebrate creativity and the positive side of our community. To ensure the comfort, safety, and mental well-being of all our members, we have adopted a strict policy regarding controversial figures.</p>
+            <p class="texto-pt">O <strong>K-pop AI Universe (KAU)</strong> é um espaço criado para celebrar a criatividade e o lado bom da nossa comunidade. Para garantir o conforto, a segurança e o bem-estar mental de todos os nossos membros, adotamos uma política rigorosa.</p>
+            <p class="texto-es">El <strong>K-pop AI Universe (KAU)</strong> es un espacio creado para celebrar la creatividad y el lado positivo de nuestra comunidad. Para garantizar la comodidad, la seguridad y el bienestar mental de todos nuestros miembros, hemos adoptado una política estricta.</p>
+            <p class="texto-fr">Le <strong>K-pop AI Universe (KAU)</strong> est un espace créé pour célébrer la créativité et le côté positif de notre communauté. Pour garantir le confort, la sécurité et le bien-être mental de tous nos membres, nous avons adopté une politique stricte.</p>
+            <br>
+            <p class="texto-en">It is strictly <strong>forbidden</strong> to mention, share images, create concepts, or generate any type of content about individuals in the industry who have been convicted of or are involved in serious crimes and harmful behavior.</p>
+            <p class="texto-pt">É estritamente <strong>proibido</strong> mencionar, compartilhar imagens, criar conceitos ou gerar qualquer tipo de conteúdo sobre indivíduos da indústria que foram condenados ou estão envolvidos em crimes graves e comportamentos nocivos.</p>
+            <p class="texto-es">Está estrictamente <strong>prohibido</strong> mencionar, compartir imágenes, crear conceptos o generar cualquier tipo de contenido sobre individuos de la industria que hayan sido condenados o estén involucrados en delitos graves y comportamientos dañinos.</p>
+            <p class="texto-fr">Il est strictement <strong>interdit</strong> de mentionner, de partager des images, de créer des concepts ou de générer tout type de contenu sur des individus de l'industrie qui ont été condamnés ou sont impliqués dans des crimes graves et des comportements nuisibles.</p>
+        </section>
+
+        <section id="lista-restrita">
+            <h2 class="texto-en">Restricted List!</h2>
+            <h2 class="texto-pt">Lista Restrita!</h2>
+            <h2 class="texto-es">¡Lista Restringida!</h2>
+            <h2 class="texto-fr">Liste Restreinte !</h2>
+            
+            <p class="texto-en" style="margin-bottom: 1.5rem;">Please check below the list of individuals not allowed on the server. Do not bring up their names or related content.</p>
+            <p class="texto-pt" style="margin-bottom: 1.5rem;">Consulte abaixo a lista de indivíduos não permitidos no servidor. Não mencione seus nomes ou conteúdos relacionados.</p>
+            <p class="texto-es" style="margin-bottom: 1.5rem;">Consulte a continuación la lista de personas no permitidas en el servidor. No mencione sus nombres ni contenido relacionado.</p>
+            <p class="texto-fr" style="margin-bottom: 1.5rem;">Veuillez consulter ci-dessous la liste des personnes non autorisées sur le serveur. Ne mentionnez pas leurs noms ni aucun contenu associé.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Search / Pesquisar...">
+            </div>
+
+            <div class="grid-lista" id="listaGrid">
+                
+                <div class="card">
+                    <div>
+                        <h3>Kris Wu</h3>
+                        <h4>Soloist / Ex-EXO</h4>
+                        <p class="texto-en">Convicted in 2022 of severe sexual assault charges, including involvement with a minor. Sentenced to 13 years in prison.</p>
+                        <p class="texto-pt">Condenado em 2022 por crimes sexuais graves, incluindo envolvimento com menor de idade. Sentenciado a 13 anos de prisão.</p>
+                        <p class="texto-es">Condenado en 2022 por cargos graves de agresión sexual, incluyendo la participación de una menor. Sentenciado a 13 años de prisión.</p>
+                        <p class="texto-fr">Condamné en 2022 pour de graves accusations d'agression sexuelle, y compris l'implication d'une mineure. Condamné à 13 ans de prison.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banido</span>
+                    <span class="status-badge texto-es">Totalmente Prohibido</span>
+                    <span class="status-badge texto-fr">Totalement Banni</span>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Dara</h3>
+                        <h4>2NE1</h4>
+                        <p class="texto-en">Admitted on a broadcast to lying about her age in order to inappropriately engage with a minor she found attractive.</p>
+                        <p class="texto-pt">Admitiu em um programa ter mentido a própria idade para se envolver inapropriadamente com um menor de idade.</p>
+                        <p class="texto-es">Admitió en un programa haber mentido sobre su edad para involucrarse de manera inapropiada con un menor.</p>
+                        <p class="texto-fr">A admis lors d'une émission avoir menti sur son âge afin de s'engager de manière inappropriée avec un mineur.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banida</span>
+                    <span class="status-badge texto-es">Totalmente Prohibida</span>
+                    <span class="status-badge texto-fr">Totalement Bannie</span>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Super Junior</h3>
+                        <h4>Boy Group</h4>
+                        <p class="texto-en">Extensive history of highly offensive remarks (including fatphobia, misogyny, and insensitivity), cultural appropriation, and inappropriate behavior on broadcasts.</p>
+                        <p class="texto-pt">Extenso histórico de comentários ofensivos (gordofobia, machismo, insensibilidade), apropriação cultural e comportamentos inadequados na TV.</p>
+                        <p class="texto-es">Extenso historial de comentarios altamente ofensivos (incluyendo gordofobia, misoginia e insensibilidad), apropiación cultural y comportamiento inapropiado en televisión.</p>
+                        <p class="texto-fr">Vaste historique de remarques très offensantes (y compris grossophobie, misogynie et insensibilité), d'appropriation culturelle et de comportements inappropriés à la télévision.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banido</span>
+                    <span class="status-badge texto-es">Totalmente Prohibido</span>
+                    <span class="status-badge texto-fr">Totalement Banni</span>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Taeil</h3>
+                        <h4>Ex-NCT</h4>
+                        <p class="texto-en">Convicted in 2025 and sentenced to prison for severe aggravated sexual assault involving an intoxicated individual.</p>
+                        <p class="texto-pt">Condenado em 2025 à prisão por agressão sexual grave envolvendo uma pessoa intoxicada.</p>
+                        <p class="texto-es">Condenado en 2025 y sentenciado a prisión por agresión sexual grave agravada contra una persona intoxicada.</p>
+                        <p class="texto-fr">Condamné en 2025 et condamné à la prison pour agression sexuelle grave aggravée impliquant une personne intoxiquée.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banido</span>
+                    <span class="status-badge texto-es">Totalmente Prohibido</span>
+                    <span class="status-badge texto-fr">Totalement Banni</span>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Seungri</h3>
+                        <h4>Ex-BIGBANG</h4>
+                        <p class="texto-en">Key figure in the 2019 Burning Sun scandal. Convicted of mediating prostitution, embezzlement, and illegal gambling.</p>
+                        <p class="texto-pt">Figura central no escândalo Burning Sun (2019). Condenado por mediação de prostituição, desvio de fundos e jogos ilegais.</p>
+                        <p class="texto-es">Figura clave en el escándalo de Burning Sun en 2019. Condenado por mediar en la prostitución, malversación de fondos y juegos de azar ilegales.</p>
+                        <p class="texto-fr">Figure clé du scandale du Burning Sun en 2019. Condamné pour médiation de prostitution, détournement de fonds et jeux d'argent illégaux.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banido</span>
+                    <span class="status-badge texto-es">Totalmente Prohibido</span>
+                    <span class="status-badge texto-fr">Totalement Banni</span>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Leia</h3>
+                        <h4>Ex-BLACKSWAN</h4>
+                        <p class="texto-en">Accused of toxic behavior, manipulation, and engaging in non-consensual, inappropriate physical contact with another member during a live broadcast.</p>
+                        <p class="texto-pt">Acusada de comportamento tóxico, manipulação e contato físico inapropriado e não consensual com outra integrante em live.</p>
+                        <p class="texto-es">Acusada de comportamiento tóxico, manipulación y de participar en contacto físico inapropiado y no consensuado con otra miembro en vivo.</p>
+                        <p class="texto-fr">Accusée de comportement toxique, de manipulation et de s'être livrée à des contacts physiques inappropriés et non consensuels avec un autre membre en direct.</p>
+                    </div>
+                    <span class="status-badge texto-en">Fully Banned</span>
+                    <span class="status-badge texto-pt">Totalmente Banida</span>
+                    <span class="status-badge texto-es">Totalmente Prohibida</span>
+                    <span class="status-badge texto-fr">Totalement Bannie</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="regras">
+            <h2 class="texto-en">Consequences!</h2>
+            <h2 class="texto-pt">Consequências!</h2>
+            <h2 class="texto-es">¡Consecuencias!</h2>
+            <h2 class="texto-fr">Conséquences !</h2>
+            
+            <p class="texto-en" style="margin-bottom: 1rem;">Breaking this guideline will result in immediate action by the moderation team:</p>
+            <p class="texto-pt" style="margin-bottom: 1rem;">A quebra desta diretriz resultará em ações imediatas por parte da moderação:</p>
+            <p class="texto-es" style="margin-bottom: 1rem;">Romper esta directriz resultará en una acción inmediata por el equipo de moderación:</p>
+            <p class="texto-fr" style="margin-bottom: 1rem;">Enfreindre cette directive entraînera une action immédiate de l'équipe de modération :</p>
+            
+            <ul class="regras-lista">
+                <li>
+                    <span class="texto-en"><strong>1st Offense:</strong> The message/content will be deleted, and the member will receive a formal warning.</span>
+                    <span class="texto-pt"><strong>1ª Ocorrência:</strong> A mensagem/conteúdo será apagado e o membro receberá um aviso formal.</span>
+                    <span class="texto-es"><strong>1ª Infracción:</strong> El mensaje/contenido será eliminado y el miembro recibirá una advertencia formal.</span>
+                    <span class="texto-fr"><strong>1ère Infraction :</strong> Le message/contenu sera supprimé et le membre recevra un avertissement formel.</span>
+                </li>
+                <li>
+                    <span class="texto-en"><strong>2nd Offense:</strong> The member will receive a temporary Strike for a month.</span>
+                    <span class="texto-pt"><strong>2ª Ocorrência:</strong> O membro receberá um Strike temporário por um mês.</span>
+                    <span class="texto-es"><strong>2ª Infracción:</strong> El miembro recibirá un Strike temporal por un mes.</span>
+                    <span class="texto-fr"><strong>2ème Infraction :</strong> Le membre recevra un Strike temporaire pour un mois.</span>
+                </li>
+                <li>
+                    <span class="texto-en"><strong>3rd Offense or severe intentional breach:</strong> Permanent ban from KAU. There will be no appeal.</span>
+                    <span class="texto-pt"><strong>3ª Ocorrência ou caso intencional grave:</strong> Banimento permanente do KAU. Não haverá recurso.</span>
+                    <span class="texto-es"><strong>3ª Infracción o incumplimiento intencional grave:</strong> Prohibición permanente de KAU. No habrá apelación.</span>
+                    <span class="texto-fr"><strong>3ème Infraction ou violation intentionnelle grave :</strong> Bannissement permanent de KAU. Il n'y aura pas d'appel.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="reporte">
+            <h2 class="texto-en">How to Report!</h2>
+            <h2 class="texto-pt">Como Denunciar!</h2>
+            <h2 class="texto-es">¡Cómo Reportar!</h2>
+            <h2 class="texto-fr">Comment Signaler !</h2>
+            
+            <p class="texto-en">Did you see something that violates these rules? Do not interact! Please help the staff keep KAU safe:</p>
+            <p class="texto-pt">Viu algo que viola essas regras? Não interaja! Por favor, ajude a staff a manter o KAU seguro:</p>
+            <p class="texto-es">¿Viste algo que viola estas reglas? ¡No interactúes! Por favor, ayuda al staff a mantener KAU seguro:</p>
+            <p class="texto-fr">Avez-vous vu quelque chose qui viole ces règles ? N'interagissez pas ! Aidez le staff à garder KAU en sécurité :</p>
+            <br>
+            <p class="texto-en">Open a <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Report Ticket in our Discord</a> under the support category or tag a Staff member (Owners or Moderators) immediately. Your identity will be kept completely confidential.</p>
+            <p class="texto-pt">Abra um <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Reporte no nosso Discord</a> na categoria de suporte ou marque a Staff imediatamente. Sua identidade será mantida em total sigilo.</p>
+            <p class="texto-es">Abre un <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Reporte en nuestro Discord</a> en la categoría de soporte o etiqueta a un miembro del Staff de inmediato. Tu identidad se mantendrá completamente confidencial.</p>
+            <p class="texto-fr">Ouvrez un <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Signalement sur notre Discord</a> dans la catégorie support ou taguez un membre du Staff immédiatement. Votre identité restera totalement confidentielle.</p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-en" target="_blank">Return to KAU Discord</a>
+        <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-pt" target="_blank">Voltar para o Discord</a>
+        <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-es" target="_blank">Volver a Discord</a>
+        <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-fr" target="_blank">Retourner sur Discord</a>
+        
+        <div style="margin-top: 1rem;">
+            <p class="texto-en">Created with love by the <strong>KAU (K-pop AI Universe)</strong> owners.</p>
+            <p class="texto-pt">Criado com amor pelas donas do <strong>KAU (K-pop AI Universe)</strong>.</p>
+            <p class="texto-es">Creado con amor por las dueñas de <strong>KAU (K-pop AI Universe)</strong>.</p>
+            <p class="texto-fr">Créé avec amour par les propriétaires de <strong>KAU (K-pop AI Universe)</strong>.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica da Barra de Pesquisa
+        const searchBar = document.getElementById('searchBar');
+        const cards = document.querySelectorAll('.card');
+
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').innerText.toLowerCase();
+                const group = card.querySelector('h4').innerText.toLowerCase();
+                const infoEn = card.querySelector('p.texto-en').innerText.toLowerCase();
+                const infoPt = card.querySelector('p.texto-pt').innerText.toLowerCase();
+                const infoEs = card.querySelector('p.texto-es').innerText.toLowerCase();
+                const infoFr = card.querySelector('p.texto-fr').innerText.toLowerCase();
+                
+                if (name.includes(searchString) || group.includes(searchString) || infoEn.includes(searchString) || infoPt.includes(searchString) || infoEs.includes(searchString) || infoFr.includes(searchString)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Lógica de Troca de Idioma
+        function setLanguage(lang) {
+            // Muda a classe do 'body' para aplicar o CSS que esconde/mostra os idiomas
+            document.body.className = 'lang-' + lang;
+            
+            // Atualiza os botões visualmente
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-pt').classList.remove('active');
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-fr').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Troca o texto de dentro da barra de pesquisa baseado no idioma
+            const placeholders = {
+                'en': "Search by name or group...",
+                'pt': "Pesquisar por nome ou grupo...",
+                'es': "Buscar por nombre o grupo...",
+                'fr': "Rechercher par nom ou groupe..."
+            };
+            document.getElementById('searchBar').placeholder = placeholders[lang];
+        }
+    </script>
+
+</body>
+</html>
