@@ -28,10 +28,11 @@
         }
 
         /* Lógica de Idiomas (Ocultar o que não está selecionado) */
-        body.lang-en .texto-pt, body.lang-en .texto-es, body.lang-en .texto-fr { display: none; }
-        body.lang-pt .texto-en, body.lang-pt .texto-es, body.lang-pt .texto-fr { display: none; }
-        body.lang-es .texto-en, body.lang-es .texto-pt, body.lang-es .texto-fr { display: none; }
-        body.lang-fr .texto-en, body.lang-fr .texto-pt, body.lang-fr .texto-es { display: none; }
+        body.lang-en .texto-pt, body.lang-en .texto-es, body.lang-en .texto-fr, body.lang-en .texto-ms { display: none; }
+        body.lang-pt .texto-en, body.lang-pt .texto-es, body.lang-pt .texto-fr, body.lang-pt .texto-ms { display: none; }
+        body.lang-es .texto-en, body.lang-es .texto-pt, body.lang-es .texto-fr, body.lang-es .texto-ms { display: none; }
+        body.lang-fr .texto-en, body.lang-fr .texto-pt, body.lang-fr .texto-es, body.lang-fr .texto-ms { display: none; }
+        body.lang-ms .texto-en, body.lang-ms .texto-pt, body.lang-ms .texto-es, body.lang-ms .texto-fr { display: none; }
 
         /* Botões de Idioma */
         .language-switcher {
@@ -256,6 +257,7 @@
             <button class="lang-btn" id="btn-pt" onclick="setLanguage('pt')">🇧🇷 PT</button>
             <button class="lang-btn" id="btn-es" onclick="setLanguage('es')">🇪🇸 ES</button>
             <button class="lang-btn" id="btn-fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
+            <button class="lang-btn" id="btn-ms" onclick="setLanguage('ms')">🇲🇾 MS</button>
         </div>
 
         <div class="logo-container">
@@ -265,6 +267,7 @@
         <h1 class="texto-pt">Diretrizes de Segurança do KAU</h1>
         <h1 class="texto-es">Directrices de Seguridad de KAU</h1>
         <h1 class="texto-fr">Directives de Sécurité de KAU</h1>
+        <h1 class="texto-ms">Garis Panduan Keselamatan KAU</h1>
     </header>
 
     <main>
@@ -273,16 +276,19 @@
             <h2 class="texto-pt">Nosso Espaço Seguro!</h2>
             <h2 class="texto-es">¡Nuestro Espacio Seguro!</h2>
             <h2 class="texto-fr">Notre Espace Sûr !</h2>
+            <h2 class="texto-ms">Ruang Selamat Kita!</h2>
             
             <p class="texto-en">The <strong>K-pop AI Universe (KAU)</strong> is a space created to celebrate creativity and the positive side of our community. To ensure the comfort, safety, and mental well-being of all our members, we have adopted a strict policy regarding controversial figures.</p>
             <p class="texto-pt">O <strong>K-pop AI Universe (KAU)</strong> é um espaço criado para celebrar a criatividade e o lado bom da nossa comunidade. Para garantir o conforto, a segurança e o bem-estar mental de todos os nossos membros, adotamos uma política rigorosa.</p>
             <p class="texto-es">El <strong>K-pop AI Universe (KAU)</strong> es un espacio creado para celebrar la creatividad y el lado positivo de nuestra comunidad. Para garantizar la comodidad, la seguridad y el bienestar mental de todos nuestros miembros, hemos adoptado una política estricta.</p>
             <p class="texto-fr">Le <strong>K-pop AI Universe (KAU)</strong> est un espace créé pour célébrer la créativité et le côté positif de notre communauté. Pour garantir le confort, la sécurité et le bien-être mental de tous nos membres, nous avons adopté une politique stricte.</p>
+            <p class="texto-ms"><strong>K-pop AI Universe (KAU)</strong> ialah ruang yang dicipta untuk meraikan kreativiti dan sisi positif komuniti kita. Untuk memastikan keselesaan, keselamatan, dan kesejahteraan mental semua ahli kami, kami telah mengguna pakai dasar yang ketat.</p>
             <br>
             <p class="texto-en">It is strictly <strong>forbidden</strong> to mention, share images, create concepts, or generate any type of content about individuals in the industry who have been convicted of or are involved in serious crimes and harmful behavior.</p>
             <p class="texto-pt">É estritamente <strong>proibido</strong> mencionar, compartilhar imagens, criar conceitos ou gerar qualquer tipo de conteúdo sobre indivíduos da indústria que foram condenados ou estão envolvidos em crimes graves e comportamentos nocivos.</p>
             <p class="texto-es">Está estrictamente <strong>prohibido</strong> mencionar, compartir imágenes, crear conceptos o generar cualquier tipo de contenido sobre individuos de la industria que hayan sido condenados o estén involucrados en delitos graves y comportamientos dañinos.</p>
             <p class="texto-fr">Il est strictement <strong>interdit</strong> de mentionner, de partager des images, de créer des concepts ou de générer tout type de contenu sur des individus de l'industrie qui ont été condamnés ou sont impliqués dans des crimes graves et des comportements nuisibles.</p>
+            <p class="texto-ms">Adalah dilarang sama sekali untuk <strong>menyebut</strong>, berkongsi imej, mencipta konsep, atau menjana sebarang jenis kandungan tentang individu dalam industri yang telah disabitkan atau terlibat dalam jenayah serius dan tingkah laku berbahaya.</p>
         </section>
 
         <section id="lista-restrita">
@@ -290,11 +296,13 @@
             <h2 class="texto-pt">Lista Restrita!</h2>
             <h2 class="texto-es">¡Lista Restringida!</h2>
             <h2 class="texto-fr">Liste Restreinte !</h2>
+            <h2 class="texto-ms">Senarai Terhad!</h2>
             
             <p class="texto-en" style="margin-bottom: 1.5rem;">Please check below the list of individuals not allowed on the server. Do not bring up their names or related content.</p>
             <p class="texto-pt" style="margin-bottom: 1.5rem;">Consulte abaixo a lista de indivíduos não permitidos no servidor. Não mencione seus nomes ou conteúdos relacionados.</p>
             <p class="texto-es" style="margin-bottom: 1.5rem;">Consulte a continuación la lista de personas no permitidas en el servidor. No mencione sus nombres ni contenido relacionado.</p>
             <p class="texto-fr" style="margin-bottom: 1.5rem;">Veuillez consulter ci-dessous la liste des personnes non autorisées sur le serveur. Ne mentionnez pas leurs noms ni aucun contenu associé.</p>
+            <p class="texto-ms" style="margin-bottom: 1.5rem;">Sila semak di bawah senarai individu yang tidak dibenarkan dalam pelayan. Jangan sebut nama mereka atau kandungan berkaitan.</p>
             
             <div class="search-container">
                 <input type="text" id="searchBar" placeholder="Search / Pesquisar...">
@@ -310,11 +318,13 @@
                         <p class="texto-pt">Condenado em 2022 por crimes sexuais graves, incluindo envolvimento com menor de idade. Sentenciado a 13 anos de prisão.</p>
                         <p class="texto-es">Condenado en 2022 por cargos graves de agresión sexual, incluyendo la participación de una menor. Sentenciado a 13 años de prisión.</p>
                         <p class="texto-fr">Condamné en 2022 pour de graves accusations d'agression sexuelle, y compris l'implication d'une mineure. Condamné à 13 ans de prison.</p>
+                        <p class="texto-ms">Disabitkan bersalah pada 2022 atas tuduhan serangan seksual yang teruk, termasuk penglibatan dengan kanak-kanak di bawah umur. Dijatuhi hukuman penjara 13 tahun.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banido</span>
                     <span class="status-badge texto-es">Totalmente Prohibido</span>
                     <span class="status-badge texto-fr">Totalement Banni</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
                 <div class="card">
@@ -325,11 +335,13 @@
                         <p class="texto-pt">Admitiu em um programa ter mentido a própria idade para se envolver inapropriadamente com um menor de idade.</p>
                         <p class="texto-es">Admitió en un programa haber mentido sobre su edad para involucrarse de manera inapropiada con un menor.</p>
                         <p class="texto-fr">A admis lors d'une émission avoir menti sur son âge afin de s'engager de manière inappropriée avec un mineur.</p>
+                        <p class="texto-ms">Mengakui dalam siaran bahawa dia menipu tentang umurnya untuk terlibat secara tidak wajar dengan seorang kanak-kanak di bawah umur.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banida</span>
                     <span class="status-badge texto-es">Totalmente Prohibida</span>
                     <span class="status-badge texto-fr">Totalement Bannie</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
                 <div class="card">
@@ -340,26 +352,30 @@
                         <p class="texto-pt">Extenso histórico de comentários ofensivos (gordofobia, machismo, insensibilidade), apropriação cultural e comportamentos inadequados na TV.</p>
                         <p class="texto-es">Extenso historial de comentarios altamente ofensivos (incluyendo gordofobia, misoginia e insensibilidad), apropiación cultural y comportamiento inapropiado en televisión.</p>
                         <p class="texto-fr">Vaste historique de remarques très offensantes (y compris grossophobie, misogynie et insensibilité), d'appropriation culturelle et de comportements inappropriés à la télévision.</p>
+                        <p class="texto-ms">Sejarah meluas mengenai kenyataan yang sangat menyinggung perasaan (termasuk fatphobia, kebencian terhadap wanita, dan ketidakpekaan), perampasan budaya dan tingkah laku tidak wajar di TV.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banido</span>
                     <span class="status-badge texto-es">Totalmente Prohibido</span>
                     <span class="status-badge texto-fr">Totalement Banni</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
                 <div class="card">
                     <div>
                         <h3>Taeil</h3>
                         <h4>Ex-NCT</h4>
-                        <p class="texto-en">Convicted in 2025 and sentenced to prison for severe aggravated sexual assault involving an intoxicated individual.</p>
-                        <p class="texto-pt">Condenado em 2025 à prisão por agressão sexual grave envolvendo uma pessoa intoxicada.</p>
-                        <p class="texto-es">Condenado en 2025 y sentenciado a prisión por agresión sexual grave agravada contra una persona intoxicada.</p>
-                        <p class="texto-fr">Condamné en 2025 et condamné à la prison pour agression sexuelle grave aggravée impliquant une personne intoxiquée.</p>
+                        <p class="texto-en">Convicted in 2024-5 and sentenced to prison for severe aggravated sexual assault involving an intoxicated individual.</p>
+                        <p class="texto-pt">Condenado em 2024-5 à prisão por agressão sexual grave envolvendo uma pessoa intoxicada.</p>
+                        <p class="texto-es">Condenado en 2024-5 y sentenciado a prisión por agresión sexual grave agravada contra una persona intoxicada.</p>
+                        <p class="texto-fr">Condamné en 2024-5 et condamné à la prison pour agression sexuelle grave aggravée impliquant une personne intoxiquée.</p>
+                        <p class="texto-ms">Disabitkan pada 2024-5 dan dijatuhi hukuman penjara kerana serangan seksual teruk yang melibatkan individu yang mabuk.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banido</span>
                     <span class="status-badge texto-es">Totalmente Prohibido</span>
                     <span class="status-badge texto-fr">Totalement Banni</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
                 <div class="card">
@@ -370,11 +386,13 @@
                         <p class="texto-pt">Figura central no escândalo Burning Sun (2019). Condenado por mediação de prostituição, desvio de fundos e jogos ilegais.</p>
                         <p class="texto-es">Figura clave en el escándalo de Burning Sun en 2019. Condenado por mediar en la prostitución, malversación de fondos y juegos de azar ilegales.</p>
                         <p class="texto-fr">Figure clé du scandale du Burning Sun en 2019. Condamné pour médiation de prostitution, détournement de fonds et jeux d'argent illégaux.</p>
+                        <p class="texto-ms">Tokoh utama dalam skandal Burning Sun 2019. Disabitkan kesalahan menjadi orang tengah pelacuran, penggelapan wang, dan perjudian haram.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banido</span>
                     <span class="status-badge texto-es">Totalmente Prohibido</span>
                     <span class="status-badge texto-fr">Totalement Banni</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
                 <div class="card">
@@ -385,11 +403,13 @@
                         <p class="texto-pt">Acusada de comportamento tóxico, manipulação e contato físico inapropriado e não consensual com outra integrante em live.</p>
                         <p class="texto-es">Acusada de comportamiento tóxico, manipulación y de participar en contacto físico inapropiado y no consensuado con otra miembro en vivo.</p>
                         <p class="texto-fr">Accusée de comportement toxique, de manipulation et de s'être livrée à des contacts physiques inappropriés et non consensuels avec un autre membre en direct.</p>
+                        <p class="texto-ms">Dituduh dengan tingkah laku toksik, manipulasi, dan terlibat dalam sentuhan fizikal yang tidak sesuai dan tanpa persetujuan dengan ahli lain semasa siaran langsung.</p>
                     </div>
                     <span class="status-badge texto-en">Fully Banned</span>
                     <span class="status-badge texto-pt">Totalmente Banida</span>
                     <span class="status-badge texto-es">Totalmente Prohibida</span>
                     <span class="status-badge texto-fr">Totalement Bannie</span>
+                    <span class="status-badge texto-ms">Diharamkan Sepenuhnya</span>
                 </div>
 
             </div>
@@ -400,11 +420,13 @@
             <h2 class="texto-pt">Consequências!</h2>
             <h2 class="texto-es">¡Consecuencias!</h2>
             <h2 class="texto-fr">Conséquences !</h2>
+            <h2 class="texto-ms">Akibat!</h2>
             
             <p class="texto-en" style="margin-bottom: 1rem;">Breaking this guideline will result in immediate action by the moderation team:</p>
             <p class="texto-pt" style="margin-bottom: 1rem;">A quebra desta diretriz resultará em ações imediatas por parte da moderação:</p>
             <p class="texto-es" style="margin-bottom: 1rem;">Romper esta directriz resultará en una acción inmediata por el equipo de moderación:</p>
             <p class="texto-fr" style="margin-bottom: 1rem;">Enfreindre cette directive entraînera une action immédiate de l'équipe de modération :</p>
+            <p class="texto-ms" style="margin-bottom: 1rem;">Melanggar garis panduan ini akan mengakibatkan tindakan segera oleh pasukan pengurusan:</p>
             
             <ul class="regras-lista">
                 <li>
@@ -412,18 +434,21 @@
                     <span class="texto-pt"><strong>1ª Ocorrência:</strong> A mensagem/conteúdo será apagado e o membro receberá um aviso formal.</span>
                     <span class="texto-es"><strong>1ª Infracción:</strong> El mensaje/contenido será eliminado y el miembro recibirá una advertencia formal.</span>
                     <span class="texto-fr"><strong>1ère Infraction :</strong> Le message/contenu sera supprimé et le membre recevra un avertissement formel.</span>
+                    <span class="texto-ms"><strong>Kesalahan Pertama:</strong> Mesej/kandungan akan dipadamkan, dan ahli akan menerima amaran rasmi.</span>
                 </li>
                 <li>
                     <span class="texto-en"><strong>2nd Offense:</strong> The member will receive a temporary Strike for a month.</span>
                     <span class="texto-pt"><strong>2ª Ocorrência:</strong> O membro receberá um Strike temporário por um mês.</span>
                     <span class="texto-es"><strong>2ª Infracción:</strong> El miembro recibirá un Strike temporal por un mes.</span>
                     <span class="texto-fr"><strong>2ème Infraction :</strong> Le membre recevra un Strike temporaire pour un mois.</span>
+                    <span class="texto-ms"><strong>Kesalahan Kedua:</strong> Ahli akan menerima Amaran (Strike) sementara selama sebulan.</span>
                 </li>
                 <li>
                     <span class="texto-en"><strong>3rd Offense or severe intentional breach:</strong> Permanent ban from KAU. There will be no appeal.</span>
                     <span class="texto-pt"><strong>3ª Ocorrência ou caso intencional grave:</strong> Banimento permanente do KAU. Não haverá recurso.</span>
                     <span class="texto-es"><strong>3ª Infracción o incumplimiento intencional grave:</strong> Prohibición permanente de KAU. No habrá apelación.</span>
                     <span class="texto-fr"><strong>3ème Infraction ou violation intentionnelle grave :</strong> Bannissement permanent de KAU. Il n'y aura pas d'appel.</span>
+                    <span class="texto-ms"><strong>Kesalahan Ketiga atau pelanggaran sengaja yang teruk:</strong> Pengharaman kekal dari KAU. Tiada rayuan.</span>
                 </li>
             </ul>
         </section>
@@ -433,16 +458,19 @@
             <h2 class="texto-pt">Como Denunciar!</h2>
             <h2 class="texto-es">¡Cómo Reportar!</h2>
             <h2 class="texto-fr">Comment Signaler !</h2>
+            <h2 class="texto-ms">Cara Melapor!</h2>
             
             <p class="texto-en">Did you see something that violates these rules? Do not interact! Please help the staff keep KAU safe:</p>
             <p class="texto-pt">Viu algo que viola essas regras? Não interaja! Por favor, ajude a staff a manter o KAU seguro:</p>
             <p class="texto-es">¿Viste algo que viola estas reglas? ¡No interactúes! Por favor, ayuda al staff a mantener KAU seguro:</p>
             <p class="texto-fr">Avez-vous vu quelque chose qui viole ces règles ? N'interagissez pas ! Aidez le staff à garder KAU en sécurité :</p>
+            <p class="texto-ms">Adakah anda melihat sesuatu yang melanggar peraturan ini? Jangan berinteraksi! Tolong bantu pihak pengurusan memastikan KAU selamat:</p>
             <br>
             <p class="texto-en">Open a <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Report Ticket in our Discord</a> under the support category or tag a Staff member (Owners or Moderators) immediately. Your identity will be kept completely confidential.</p>
             <p class="texto-pt">Abra um <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Reporte no nosso Discord</a> na categoria de suporte ou marque a Staff imediatamente. Sua identidade será mantida em total sigilo.</p>
             <p class="texto-es">Abre un <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Reporte en nuestro Discord</a> en la categoría de soporte o etiqueta a un miembro del Staff de inmediato. Tu identidad se mantendrá completamente confidencial.</p>
             <p class="texto-fr">Ouvrez un <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Ticket de Signalement sur notre Discord</a> dans la catégorie support ou taguez un membre du Staff immédiatement. Votre identité restera totalement confidentielle.</p>
+            <p class="texto-ms">Buka <a href="https://discord.gg/kpop-universe-1099080009550934060" target="_blank">Tiket Laporan di Discord kami</a> di bawah kategori sokongan atau tag ahli Pengurusan dengan segera. Identiti anda akan dirahsiakan sepenuhnya.</p>
         </section>
     </main>
 
@@ -451,12 +479,14 @@
         <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-pt" target="_blank">Voltar para o Discord</a>
         <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-es" target="_blank">Volver a Discord</a>
         <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-fr" target="_blank">Retourner sur Discord</a>
+        <a href="https://discord.gg/kpop-universe-1099080009550934060" class="discord-btn texto-ms" target="_blank">Kembali ke Discord KAU</a>
         
         <div style="margin-top: 1rem;">
             <p class="texto-en">Created with love by the <strong>KAU (K-pop AI Universe)</strong> owners.</p>
             <p class="texto-pt">Criado com amor pelas donas do <strong>KAU (K-pop AI Universe)</strong>.</p>
             <p class="texto-es">Creado con amor por las dueñas de <strong>KAU (K-pop AI Universe)</strong>.</p>
             <p class="texto-fr">Créé avec amour par les propriétaires de <strong>KAU (K-pop AI Universe)</strong>.</p>
+            <p class="texto-ms">Dicipta dengan penuh kasih sayang oleh pemilik <strong>KAU (K-pop AI Universe)</strong>.</p>
         </div>
     </footer>
 
@@ -475,8 +505,9 @@
                 const infoPt = card.querySelector('p.texto-pt').innerText.toLowerCase();
                 const infoEs = card.querySelector('p.texto-es').innerText.toLowerCase();
                 const infoFr = card.querySelector('p.texto-fr').innerText.toLowerCase();
+                const infoMs = card.querySelector('p.texto-ms').innerText.toLowerCase();
                 
-                if (name.includes(searchString) || group.includes(searchString) || infoEn.includes(searchString) || infoPt.includes(searchString) || infoEs.includes(searchString) || infoFr.includes(searchString)) {
+                if (name.includes(searchString) || group.includes(searchString) || infoEn.includes(searchString) || infoPt.includes(searchString) || infoEs.includes(searchString) || infoFr.includes(searchString) || infoMs.includes(searchString)) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';
@@ -494,6 +525,7 @@
             document.getElementById('btn-pt').classList.remove('active');
             document.getElementById('btn-es').classList.remove('active');
             document.getElementById('btn-fr').classList.remove('active');
+            document.getElementById('btn-ms').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
 
             // Troca o texto de dentro da barra de pesquisa baseado no idioma
@@ -501,7 +533,8 @@
                 'en': "Search by name or group...",
                 'pt': "Pesquisar por nome ou grupo...",
                 'es': "Buscar por nombre o grupo...",
-                'fr': "Rechercher par nom ou groupe..."
+                'fr': "Rechercher par nom ou groupe...",
+                'ms': "Cari mengikut nama atau kumpulan..."
             };
             document.getElementById('searchBar').placeholder = placeholders[lang];
         }
@@ -509,3 +542,4 @@
 
 </body>
 </html>
+
